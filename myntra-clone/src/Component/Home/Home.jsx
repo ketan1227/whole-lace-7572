@@ -9,7 +9,6 @@ function Home(){
     <Navbar />
     <Banner />
     <Midsection />
-    <Footer />
     
     </>
 }

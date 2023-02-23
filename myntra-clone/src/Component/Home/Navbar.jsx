@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 
 import { FaSearch, FaUser, FaHeart, FaShoppingCart} from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, Navigate} from "react-router-dom";
 
 function Navbar() {
     const [isMensWearHover, setIsMensWearHover] = useState(false);
@@ -41,7 +41,7 @@ function Navbar() {
             >
               <Box mr={40}>
               <Box fontWeight="bold"  color="pink" >TOP WEAR</Box>
-              <Box><Link to="/tshirt">T-SHIRTS</Link></Box>
+              <Box> <Link to="/tshirt">T-SHIRTS</Link></Box>
               <Box>Shirts</Box>
               <Box>CASUAL SHIRTS</Box>
               <Box>Formal Shirts</Box>
