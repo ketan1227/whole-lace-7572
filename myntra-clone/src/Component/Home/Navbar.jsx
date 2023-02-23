@@ -12,6 +12,8 @@ import { Link, Navigate} from "react-router-dom";
 
 function Navbar() {
     const [isMensWearHover, setIsMensWearHover] = useState(false);
+    const [isprofile, setIsprofile] = useState(false);
+
 
   return (
     <>
@@ -84,13 +86,38 @@ function Navbar() {
       </Box>
       
       <Box display="flex" alignItems="center">
+        <div>
         <IconButton
+        onMouseEnter={() => setIsprofile(true)}
+        onMouseLeave={() => setIsprofile(false)} 
           aria-label="Profile"
           variant="ghost"
           icon={<FaUser />}
           mr="5"
           p={10}
         />
+        {isprofile && 
+            <Box
+            position="absolute"
+            mt="0"
+            p="20"
+            bg="white"
+            boxShadow="md"
+            textAlign="left"
+            zIndex="1"
+            cursor="pointer"
+              
+            >
+              <Box>Login/signup</Box>
+              <hr></hr>
+              <Box>Orders</Box>
+              <Box>WishList</Box>
+              <Box>GiftCards</Box>
+              <Box>Contact Us</Box>
+              <Box>LogOut</Box>
+              
+              </Box>}
+              </div>
         <IconButton
           aria-label="Wishlist"
           variant="ghost"
@@ -98,6 +125,7 @@ function Navbar() {
           mr="5"
           p={10}
         />
+        <Link to="/cart">
         <IconButton
           aria-label="Cart"
           variant="ghost"
@@ -106,6 +134,7 @@ function Navbar() {
           border="white"
           icon={<FaShoppingCart />}
         />
+        </Link>
       </Box>
     </Flex>
     

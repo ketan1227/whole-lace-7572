@@ -2,10 +2,16 @@ import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Navbar from '../Component/Home/Navbar';
 
+
 function Product() {
   const  productId  = useParams();
+ 
   console.log(productId)
   const [product, setProduct] = useState({});
+  
+  
+  const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem('cartItems')) || []);
+ 
 
   useEffect(() => {
     fetch(`http://localhost:3000/tshirts/${productId.productid}`)
@@ -13,48 +19,78 @@ function Product() {
       .then(data => {
         setProduct(data);
         console.log(data)
+
       });
   }, []);
 
+  const addToCart = () => {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  
+    // check if item is already in cart
+    const itemIndex = cartItems.findIndex(item => item.id === product.id);
+    if (itemIndex !== -1) {
+      alert('Item already present in cart');
+      return;
+    }
+  
+    // add quantity of 1 to the product before pushing to cart
+    const productWithQuantity = {...product, quantity: 1};
+  
+    cartItems.push(productWithQuantity);
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    setCartItems(cartItems);
+  };
+  
+ 
+  
   return (
     <>
       <Navbar />
-      <div  style={{border:"2px solid red",height:"auto",display:"flex",}}  >
-      <div style={{border:"1px solid black",height:"auto",width:"60%",margin:"10px",display:"grid",gridTemplateColumns: "repeat(2,1fr)",gap:"10px"}}  >
-
-   <img src={product.image1} alt="" width="100%" style={{marginRight:"10px"}} />
-   <img src={product.image2} alt="" width="100%"/>
-   <img src={product.image3} alt="" width="100%"style={{marginRight:"10px"}}/>
-   <img src={product.image4} alt="" width="100%"/>
-
-      </div>
-      <div style={{border:"1px solid black",height:"auto",width:"40%"}}  >
-        <div style={{marginTop:"20px"}}>
-      <h2>{product.brand}</h2>
-      <h2 style={{color:"grey"}}  >{product.name}</h2>
-      <h3 >Rating:{product.rating}</h3>
-      <hr></hr>
-      </div>
-      <div style={{display:"flex",marginTop:"20px"}}>
-      <h1>RS:{product.price}</h1>
-      <h2 style={{textDecoration:"line-through",color:"grey",marginLeft:"10px"}}>MRP 3000</h2>
-      <h2 style={{color:"orange",fontWeight:"bolder",marginLeft:"10px"}}>(20% OFF)</h2>
-      </div>
-      <hr></hr>
-      <h3 style={{letterSpacing:"10px"}}>{product.size}</h3>
-      <div style={{display:"flex"}}>
-      <button  style={{padding:"20px 100px",backgroundColor:" #e75480",color:"white",fontSize:"larger",
-      border:"0px",
-      borderRadius:"10px"}}>Add To Bag</button>
+      <div style={{border:"2px solid red",height:"auto",display:"flex",}}>
+        <div style={{border:"1px solid black",height:"auto",width:"60%",margin:"10px",display:"grid",gridTemplateColumns: "repeat(2,1fr)",gap:"10px"}}>
+          <img src={product.image1} alt="" width="100%" style={{marginRight:"10px"}} />
+          <img src={product.image2} alt="" width="100%"/>
+          <img src={product.image3} alt="" width="100%"style={{marginRight:"10px"}}/>
+          <img src={product.image4} alt="" width="100%"/>
+        </div>
+        <div style={{border:"1px solid black",height:"auto",width:"40%"}}>
+          <div style={{marginTop:"20px"}}>
+            <h2>{product.brand}</h2>
+            <h2 style={{color:"grey"}}>{product.name}</h2>
+            <h3>Rating: {product.rating}</h3>
+            <hr></hr>
+          </div>
+          <div style={{display:"flex",marginTop:"20px"}}>
+            <h1>RS: {product.price}</h1>
+            <h2 style={{textDecoration:"line-through",color:"grey",marginLeft:"10px"}}>MRP 3000</h2>
+            <h2 style={{color:"orange",fontWeight:"bolder",marginLeft:"10px"}}>(20% OFF)</h2>
+          </div>
+          <hr></hr>
+          <h3 style={{letterSpacing:"10px"}}>{product.size}</h3>
+          <div style={{display:"flex"}}>
+            <button onClick={addToCart} style={{padding:"20px 100px",backgroundColor:" #e75480",color:"white",fontSize:"larger", border:"0px", borderRadius:"10px"}}>Add To Bag</button>
+           
 
       <button   
+
       style={{padding:"20px 100px",backgroundColor:"white",color:"black",fontSize:"larger",
       border:"0.5px solid grey", margin:"3px",
       borderRadius:"10px"}}
       >Wish List</button>
       </div>
       <hr></hr>
-      <h3>PRODUCT DETAILS </h3>
+      
+      </div>
+     
+      </div>
+    </>
+  );
+}
+export default Product
+
+
+//json-server --watch db.json
+{/* <h3>PRODUCT DETAILS </h3>
       <h4>Product Design Details:</h4>
       <p>
 
@@ -92,14 +128,4 @@ Occasion
 Sports
 Pattern
 Solid
-</p>
-      </div>
-     
-      </div>
-    </>
-  );
-}
-export default Product
-
-
-//json-server --watch db.json
+</p> */}
