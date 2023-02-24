@@ -9,10 +9,10 @@ export const bannerData=[
 
 
 export const DofDay=[
-    {id:1,url:"https://www.bing.com/images/blob?bcid=RMVHTxb4mEYF0w"},
-    {id:2,url:"https://www.bing.com/images/blob?bcid=RC0YTJtt4EYFwA"},
-    {id:3,url:"https://www.bing.com/images/blob?bcid=RKOVpbO6o0YFQQ"},
-    {id:4,url:"https://www.bing.com/images/blob?bcid=RHWSGZIUkUYF8Q"},
+    {id:1,url:"https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/2/23/062cea23-9a6a-44b9-bdd4-87cae6a462311645602543339-Kurta-sets.jpg"},
+    {id:2,url:"https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/2/23/c6b09c0f-5c57-472c-a3fc-854ec506a90e1645602543387-Men-T-shirt.jpg"},
+    {id:3,url:"https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/2/23/398ee53b-5899-4a9a-9d0b-b35d60c01cb41645602543325-Dresses.jpg"},
+    {id:4,url:""},
     {id:5,url:"https://www.bing.com/images/blob?bcid=RFslA3y1rUYF-w"},
    {id:6,url:"https://www.bing.com/images/blob?bcid=RNR4AjxAC0YFqxcxoNWLuD9SqbotqVTdPzs"},
   
