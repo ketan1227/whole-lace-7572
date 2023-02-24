@@ -16,7 +16,7 @@ const responsive = {
     }
   };
 function Banner(){
-    return <Carousel 
+    return <> <div style={{marginTop:"100px"}}> <Carousel 
     responsive={responsive}
     swipeable={false}
   draggable={false}
@@ -27,6 +27,7 @@ function Banner(){
     containerClass='carousel-container'
   itemClass='carousel-item-padding-40-px'
   transitionDuration={500}
+  
   
     
     >
@@ -41,6 +42,9 @@ function Banner(){
 
 
     </Carousel>
+    </div>
+    </>
+    
 }
 
 export default Banner

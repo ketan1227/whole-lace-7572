@@ -1,6 +1,10 @@
 import React from 'react';
+import { Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const PaymentPage = () => {
+
+  
   return (
     <div style={styles.container}>
       <div style={styles.logoContainer}>
@@ -30,7 +34,10 @@ const PaymentPage = () => {
             <input type="text" style={styles.inputSmall} placeholder="123" />
           </div>
         </div>
-        <button style={styles.button}>Pay Now</button>
+        <Link to="/" >  <button  onClick={() => {
+  alert("order successful");
+  localStorage.removeItem("cartItems");
+}} style={styles.button}>Pay Now</button></Link>
       </div>
     </div>
   );

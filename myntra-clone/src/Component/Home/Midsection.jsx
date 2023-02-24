@@ -12,39 +12,8 @@ import { newness } from "../../data";
 function Midsection(){
 
 return <>
-<h1 style={{textAlign:"left",fontStyle:"inherit",marginTop:"40px",marginBottom:"40px",marginLeft:"30px",}}>DEAL OF THE DAY</h1>
 
-<Flex
-      flexWrap="wrap"
-      justifyContent="center"
-      alignItems="center"
-    >
-      {DofDay.map((imageUrl, index) => (
-        <Box
-          key={index}
-          boxSize={{ base: "70px", sm: "70px", md: "70px" }}
-          m={4}
-        >
-          <Image src={imageUrl.url} alt={`Image ${index + 1}`} boxSize="100%"  objectFit="cover" />
-        </Box>
-      ))}
-    </Flex>
-    <h1 style={{textAlign:"left",fontStyle:"inherit",marginTop:"40px",marginBottom:"40px",marginLeft:"30px",}}>BEST OF MYNTRA EXCLUSIVE BRANDS</h1>
-    <Flex
-      flexWrap="wrap"
-      justifyContent="center"
-      alignItems="center"
-    >
-      {BofM.map((imageUrl, index) => (
-        <Box
-          key={index}
-          boxSize={{ base: "70px", sm: "70px", md: "70px" }}
-          m={4}
-        >
-          <Image src={imageUrl.url} alt={`Image ${index + 1}`} boxSize="100%" width={200} objectFit="cover" />
-        </Box>
-      ))}
-    </Flex>
+
     {/* top picks sec */}
     <h1 style={{textAlign:"left",fontStyle:"inherit",marginTop:"40px",marginBottom:"40px",marginLeft:"30px",}}>TOP PICKS</h1>
     <Flex
@@ -58,7 +27,7 @@ return <>
           boxSize={{ base: "70px", sm: "70px", md: "70px" }}
           m={1}
         >
-          <Image src={imageUrl.url} alt={`Image ${index + 1}`} boxSize="100%" width={250} objectFit="cover" />
+          <Image src={imageUrl.url} alt={`Image ${index + 1}`} boxSize="100%" width={240} objectFit="cover" />
         </Box>
       ))}
     </Flex>

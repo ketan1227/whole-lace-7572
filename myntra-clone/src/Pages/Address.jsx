@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import { Link } from 'react-router-dom';
 function Address() {
   const [name, setName] = useState('');
   const [mobile, setMobile] = useState('');
@@ -19,7 +19,9 @@ function Address() {
       setCity(address.city);
       setState(address.state);
       setPincode(address.pincode);
+      
     }
+    
   }, []);
 
   const handleSubmit = (event) => {
@@ -34,6 +36,13 @@ function Address() {
       pincode,
     };
     localStorage.setItem('address', JSON.stringify(address));
+    setName("");
+      setMobile("");
+      setAddressLine1("");
+      setAddressLine2("");
+      setCity("");
+      setState("");
+      setPincode("");
   };
 
   function getAddress() {
@@ -122,9 +131,9 @@ function Address() {
             />
           </label>
         </div>
-        <button type="submit" style={styles.button}>
+       <Link to="/payment"> <button type="submit" style={styles.button}>
           Save Address
-        </button>
+        </button></Link>
       </form>
     </div>
   );

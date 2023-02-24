@@ -2,6 +2,7 @@ import Navbar from "../Component/Home/Navbar";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Navigate } from "react-router-dom";
+import Footer from "./Footer";
 
 function Tshirt() {
   const [sortBy, setSortBy] = useState("");
@@ -67,7 +68,7 @@ return
   return (
     <>
       <Navbar />
-      <div style={{display:"flex", marginBottom:"20px",justifyContent:"space-between"}}>
+      <div style={{display:"flex", marginBottom:"20px",justifyContent:"space-between",marginTop:"100px"}}>
         <div>
       <h4 style={{color:"grey"}}>Home / Clothing / Men T-Shirts</h4>
 
@@ -88,9 +89,9 @@ return
         <div style={{width:"500px", textAlign:"center"}}>
       <div>
         <h1>Filters</h1>
-        <label > filter By Color:</label>
+        <label > filter By Color:</label><br></br>
         <select
-        style={{padding:"10px",borderRadius:"10px"}}
+        style={{padding:"10px",borderRadius:"10px",marginTop:"20px"}}
           name="color"
           value={filter.color}
           onChange={handleFilterChange}
@@ -105,8 +106,9 @@ return
         style={{marginTop:"50px"}}
       >
         <label style={{ marginBottom: "30px" }}>Filter By Brand:</label>
+        <br></br>
         <select
-        style={{padding:"10px",borderRadius:"10px",}}
+        style={{padding:"10px",borderRadius:"10px",marginTop:"30px"}}
           name="brand"
           value={filter.brand}
           onChange={handleFilterChange}
@@ -147,6 +149,7 @@ return
           ))}
       </div>
       </div>
+      <Footer />
     </>
   );
 }

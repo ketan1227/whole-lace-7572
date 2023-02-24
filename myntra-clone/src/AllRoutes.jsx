@@ -5,7 +5,10 @@ import Product from "./Pages/SingleProductPage";
 import Address from "./Pages/Address";
 import PaymentPage from "./Pages/Payment";
 import Cart from "./Pages/Cart";
+import SignupForm from "./Pages/Signup";
+import AddProduct from "./Pages/Backend";
 
+import LoginForm from "./Pages/Login";
 function AllRoutes(){
     return <>
     <Routes>
@@ -16,6 +19,9 @@ function AllRoutes(){
 <Route path="/cart" element={<Cart />} />
 <Route path="/address" element={<Address />} />
 <Route path="/payment" element={<PaymentPage />} />
+<Route path="/login" element={<LoginForm />} />
+<Route path="/signup" element={<SignupForm />} />
+<Route path="/backend" element={<AddProduct />} />
     </Routes>
     </>
 }

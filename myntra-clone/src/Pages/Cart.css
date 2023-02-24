@@ -1,0 +1,118 @@
+
+.cart-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .cart-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  .cart-total {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+  }
+  
+  .cart-item img {
+    width: 80px;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  .cart-item-info {
+    flex-grow: 1;
+  }
+  
+  .cart-item-info h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 10px;
+  }
+  
+  .cart-item-info p {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    color: #666;
+  }
+  
+  .cart-item-quantity {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cart-item-quantity button {
+    background-color: #f5f5f5;
+    color: #666;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 0 5px;
+  }
+  
+  .cart-item-delete {
+    font-size: 18px;
+    font-weight: 500;
+    color: #f44336;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .cart-item-delete:hover {
+    color: #d32f2f;
+  }
+  
+  .cart-checkout {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  
+  .cart-checkout button {
+    background-color: #2196f3;
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .cart-checkout button:hover {
+    background-color: #1976d2;
+  }
+  

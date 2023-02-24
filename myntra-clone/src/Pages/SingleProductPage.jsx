@@ -46,14 +46,14 @@ function Product() {
   return (
     <>
       <Navbar />
-      <div style={{border:"2px solid red",height:"auto",display:"flex",}}>
-        <div style={{border:"1px solid black",height:"auto",width:"60%",margin:"10px",display:"grid",gridTemplateColumns: "repeat(2,1fr)",gap:"10px"}}>
+      <div style={{height:"auto",display:"flex",}}>
+        <div style={{height:"auto",width:"60%",margin:"10px",display:"grid",gridTemplateColumns: "repeat(2,1fr)",gap:"10px"}}>
           <img src={product.image1} alt="" width="100%" style={{marginRight:"10px"}} />
           <img src={product.image2} alt="" width="100%"/>
           <img src={product.image3} alt="" width="100%"style={{marginRight:"10px"}}/>
           <img src={product.image4} alt="" width="100%"/>
         </div>
-        <div style={{border:"1px solid black",height:"auto",width:"40%"}}>
+        <div style={{height:"auto",width:"40%"}}>
           <div style={{marginTop:"20px"}}>
             <h2>{product.brand}</h2>
             <h2 style={{color:"grey"}}>{product.name}</h2>
@@ -66,7 +66,8 @@ function Product() {
             <h2 style={{color:"orange",fontWeight:"bolder",marginLeft:"10px"}}>(20% OFF)</h2>
           </div>
           <hr></hr>
-          <h3 style={{letterSpacing:"10px"}}>{product.size}</h3>
+         
+         <h2>{product.size.join(', ')}</h2> 
           <div style={{display:"flex"}}>
             <button onClick={addToCart} style={{padding:"20px 100px",backgroundColor:" #e75480",color:"white",fontSize:"larger", border:"0px", borderRadius:"10px"}}>Add To Bag</button>
            
@@ -79,18 +80,7 @@ function Product() {
       >Wish List</button>
       </div>
       <hr></hr>
-      
-      </div>
-     
-      </div>
-    </>
-  );
-}
-export default Product
-
-
-//json-server --watch db.json
-{/* <h3>PRODUCT DETAILS </h3>
+      <h3>PRODUCT DETAILS </h3>
       <h4>Product Design Details:</h4>
       <p>
 
@@ -128,4 +118,14 @@ Occasion
 Sports
 Pattern
 Solid
-</p> */}
+</p>
+      </div>
+     
+      </div>
+    </>
+  );
+}
+export default Product
+
+
+//json-server --watch db.json
